@@ -4,7 +4,7 @@ json file. It is done with help mini-server. Mini server is deployed and run in 
 Before run: double click on index.html
 2 Task: There is some file .json and mini-server.
 Before run server: enter in console 'npm i' -> "node server.js"  
-3 Task: React Application.  
+3-4 Task: React Application.  
 Before run app:  enter in console 'npm i' -> "npm start"  
 If you want work with local-server:  
 -run server  
