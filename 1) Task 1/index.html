@@ -1,0 +1,113 @@
+<html>
+<head>
+    <link rel="stylesheet" href="app.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    let data = {}
+    fetch('https://glacial-peak-70835.herokuapp.com/data')
+        .then(d => {
+            data = d.json()
+        })
+</script>
+<body>
+<header>
+    <container>
+        <div class="header">
+            <div class="header-brand">
+                Super<span>Bank</span>
+            </div>
+        </div>
+    </container>
+
+</header>
+<main>
+    <container>
+        <section class="bar-main_area">
+            <section class="bar">
+                <div class="bar-button">
+                    <button>Создать продукт</button>
+                </div>
+
+                <div class="bar-product active">
+                    <div class="bar-product_title">
+                        Loan Product General
+                    </div>
+                    <div class="bar-product_subTitle">
+                        12.12.2021
+                    </div>
+                </div>
+                <div class="bar-product">
+                    <div class="bar-product_title">
+                        Loan Product 3000
+                    </div>
+                    <div class="bar-product_subTitle">
+                        12.12.2021
+                    </div>
+                </div>
+                <div class="bar-product">
+                    <div class="bar-product_title">
+                        Loan Product 1000
+                    </div>
+                    <div class="bar-product_subTitle">
+                        12.12.2021
+                    </div>
+                </div>
+                <div class="bar-product">
+                    <div class="bar-product_title">
+                        Loan Product для двоих
+                    </div>
+                    <div class="bar-product_subTitle">
+                        12.12.2021
+                    </div>
+                </div>
+
+            </section>
+            <section class="main">
+                <div class="main-title">Редактирование: Loan Product General</div>
+                <div class="main-area">
+
+                    <div class="main-area_field">
+                        <label> Product Name </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                    <div class="main-area_field">
+                        <label> Min Amount </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                    <div class="main-area_field">
+                        <label> Max Amount </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                    <div class="main-area_field">
+                        <label> Min Term </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                    <div class="main-area_field">
+                        <label> Max Term </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                    <div class="main-area_field">
+                        <label> Annual Interest Rate </label>
+                        <input type="text" placeholder="Placeholder"/>
+                    </div>
+
+                </div>
+                <button class="main-button">Сохранить</button>
+            </section>
+        </section>
+    </container>
+
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+{
+  "data": [
+    {
+      "id": 1,
+      "productName": "Loan Product General",
+      "amountMax": 1,
+      "amountMin": 100,
+      "termMax": 2,
+      "termMin": 200,
+      "rate": "20%",
+      "date": "12.12.2022"
+    },
+    {
+      "id": 2,
+      "productName": "Loan Product 3000",
+      "amountMax": 1,
+      "amountMin": 100,
+      "termMax": 2,
+      "termMin": 200,
+      "rate": "20%",
+      "date": "12.12.2022"
+    },
+    {
+      "id": 3,
+      "productName": "Loan Product 1000",
+      "amountMax": 1,
+      "amountMin": 100,
+      "termMax": 2,
+      "termMin": 200,
+      "rate": "20%",
+      "date": "12.12.2022"
+    },
+    {
+      "id": 4,
+      "productName": "Loan Product для своих",
+      "amountMax": 1,
+      "amountMin": 100,
+      "termMax": 2,
+      "termMin": 200,
+      "rate": "20%",
+      "date": "12.12.2022"
+    }
+  ]
+}
