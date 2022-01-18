@@ -146,7 +146,7 @@ function App() {
                                                     changProduct={changProduct}
                                                     product={fieldProduct()}
                                                 />
-                                            } return <></>
+                                            } return []
                                             })
                                         }
                                         <button
