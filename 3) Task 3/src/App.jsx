@@ -40,10 +40,9 @@ function App() {
 
     const saveProduct = () => {
         let localHelperObj
-        state.filter(i => {
-            if (i.id === active) {
-                return localHelperObj = i
-            }
+        state.filter(i => { if (i.id === active) {
+            return localHelperObj = i
+        } return i
         })
         for (let elem in localHelperObj) {
             if (dataAllInputs[elem]) {
@@ -85,29 +84,30 @@ function App() {
             return arr.push([...nameLabel, key, value])
         }
 
-        state.map((i) => {
-            if (i.id === active) {
-                for (let key in i) {
-                    if (key === 'productName') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.productName, localHelperArr, key, i[key])
-                    }
-                    if (key === 'amountMax') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.amountMax, localHelperArr, key, i[key])
-                    }
-                    if (key === 'amountMin') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.amountMin, localHelperArr, key, i[key])
-                    }
-                    if (key === 'termMin') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.termMin, localHelperArr, key, i[key])
-                    }
-                    if (key === 'termMax') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.termMax, localHelperArr, key, i[key])
-                    }
-                    if (key === 'rate') {
-                        localHelperFunc(TEMPLATE_INPUT_NAMES.rate, localHelperArr, key, i[key])
-                    }
+        state.map((i) => { if (i.id === active) {
+            for (let key in i) {
+                if (key === 'productName') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.productName, localHelperArr, key, i[key])
+                }
+                if (key === 'amountMax') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.amountMax, localHelperArr, key, i[key])
+                }
+                if (key === 'amountMin') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.amountMin, localHelperArr, key, i[key])
+                }
+                if (key === 'termMin') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.termMin, localHelperArr, key, i[key])
+                }
+                if (key === 'termMax') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.termMax, localHelperArr, key, i[key])
+                }
+                if (key === 'rate') {
+                    localHelperFunc(TEMPLATE_INPUT_NAMES.rate, localHelperArr, key, i[key])
                 }
             }
+            return i
+        }
+            return i
         })
         return localHelperArr
     }
@@ -139,15 +139,14 @@ function App() {
                                 active ?
                                     <>
                                         {
-                                            productList().map(([name, , id]) => {
-                                                if (id === active) {
-                                                    return <EditProduct
-                                                        nameEdit={name}
-                                                        key={nanoid()}
-                                                        changProduct={changProduct}
-                                                        product={fieldProduct()}
-                                                    />
-                                                }
+                                            productList().map(([name, , id]) => { if (id === active) {
+                                                return <EditProduct
+                                                    nameEdit={name}
+                                                    key={nanoid()}
+                                                    changProduct={changProduct}
+                                                    product={fieldProduct()}
+                                                />
+                                            } return <></>
                                             })
                                         }
                                         <button
