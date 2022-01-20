@@ -1,6 +1,6 @@
 import './App.css';
 import api from "./api/api";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import Header from "./components/header";
 import Product from "./components/product";
 import {EditProduct} from "./components/editProduct";
@@ -8,6 +8,20 @@ import {nanoid} from "nanoid";
 import {TEMPLATE_INPUT_NAMES} from "./constants";
 
 function App() {
+    let errorInterval
+
+    const [active, setActive] = useState()
+    const [state, setState] = useState([])
+    const [responseState, setResponseState] = useState('Загрузка продуктов...')
+    const [statusCode, setStatusCode] = useState();
+
+
+    if (statusCode === 404) {
+        errorInterval = setTimeout(() => {
+            setResponseState('Создайте или выберите продукт')
+            setStatusCode(null)
+        }, 1500)
+    }
 
     useEffect(() => {
         api().then((data) => {
@@ -16,26 +30,8 @@ function App() {
             return data.json()
         })
             .then(data => setState(data))
-        return clearInterval(interval.current)
-    }, [])
-
-
-    const [active, setActive] = useState()
-    const [state, setState] = useState([])
-    const [responseState, setResponseState] = useState('Загрузка продуктов...')
-    const [statusCode, setStatusCode] = useState();
-    const errors = useRef()
-    const interval = useRef(null)
-
-    useEffect(()=>{
-        if(errors.current !== undefined){
-            interval.current = setTimeout(()=>{
-                setResponseState('Создайте или выберите продукт')
-                setStatusCode(null)
-            }, 1500)
-        }
-
-    }, [errors.current])
+        return clearInterval(errorInterval)
+    }, [errorInterval])
 
     const selectProduct = (value) => {
         setActive(value)
@@ -188,7 +184,9 @@ function App() {
                                     :
                                     <h2> {responseState} </h2>
                             }
-                            {statusCode === 404 && <h5 className={'error-entries'} ref={errors}>Ошибка при загрузке (((</h5>}
+                            {statusCode === 404 &&
+                            <h5 className={'error-entries'}
+                            >Ошибка при загрузке (((</h5>}
 
                         </section>
                     </section>
